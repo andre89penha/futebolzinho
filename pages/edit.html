@@ -1,0 +1,20 @@
+<section role="region" class="vbox fit">
+	<header>
+		<h1>Futebolzinho</h1>
+	</header>
+
+	<section id="inputArea">
+		<form>
+			<p>Editar Jogador</p>
+			<input type="text" placeholder="Nome" ng-model="playerName" value="{{playerName}}">
+
+			Level <select ng-model="playerLevel" ng-options="level.name for level in levels"></select><br/>		
+			Position<select ng-model="playerPosition" ng-options="position for position in positions"></select>
+			<button ng-click="save()">Salvar</button>
+		</form>
+	</section>
+	
+	<footer class="gaia-footer">
+		<button ng-click="back()">Cancelar</button>
+	</footer>
+</section>
