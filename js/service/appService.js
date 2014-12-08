@@ -2,6 +2,8 @@ app.factory('AppService', function(){
 	
 	var players = [];
 	var appService = {};
+	var teamA = [];
+	var teamB = [];
 
 	var persist = function(){
 		localStorage.setItem('players', JSON.stringify(players));
@@ -49,9 +51,32 @@ app.factory('AppService', function(){
 		}
 	}
 
+
 	appService.sortPlayers = function(){
+		teamA = [];
+		teamB = [];
 		var sortList = players;
-		console.log(sortList.length);
+		var len = sortList.length;
+		while (len > 0)  {
+			var sort = Math.floor(Math.random() * len);
+
+			if (len % 2 == 0) {
+				teamA.push(sortList[sort]);
+			} else {
+				teamB.push(sortList[sort]);
+			}
+			sortList.splice(sort,1);
+			len = sortList.length;
+		}
 	}
+	
+	appService.getTeamA = function(){
+		return teamA;
+	}
+
+	appService.getTeamB = function(){
+		return teamB;
+	}
+
 	return appService;
 });

@@ -6,9 +6,11 @@
 	<section id="inputArea">
 		<div id="left">
 			<h3>Time A</h3>
+			<p ng-repeat="playerA in listTeamA track by $index">{{playerA.name}}</p>
 		</div>
 		<div id="right">
 			<h3>Time B</h3>
+			<p ng-repeat="playerB in listTeamB track by $index">{{playerB.name}}</p>
 		</div>
 	</section>
 	

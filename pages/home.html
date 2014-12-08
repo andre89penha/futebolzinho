@@ -15,7 +15,7 @@
 		<article>
 			<header>Convocados ({{countConvene}})</header>
 			<ul>
-				<li ng-repeat="player in listPlayers">
+				<li ng-repeat="player in listPlayers track by $index">
 					<aside class="pack-end">
 						<img id="imagePosition" alt="placeholder" src="images/{{player.position}}.png">
 					</aside>
