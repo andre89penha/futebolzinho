@@ -1,0 +1,15 @@
+{
+  "version": "1",
+  "name": "Unit Converter",
+  "launch_path": "/index.html",
+  "description": "App to convert KM to Mile",
+  "icons": {
+    "128": "/images/logo128.png"
+  },
+  "developer": {
+    "name": "Edy Segura",
+    "url": "http://www.edy.com.br"
+  },
+  "installs_allowed_from": ["*"],
+  "default_locale": "en"
+}

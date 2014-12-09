@@ -1,4 +1,9 @@
-
+#index {
+	width: 360px;
+	height: 640px;
+	margin-left: auto;
+	margin-right: auto;
+}
 #inputArea{
 	padding: 20px;
 	padding-bottom: 5px;
@@ -30,16 +35,16 @@ a {
 
 #left{
 	position:relative;
-	width: 140px;
-	height: 200px;
+	width: 150px;
 	float: left;
+	text-align: center;
 }
 
 #right{
 	position:relative;
-	width: 140px;
-	height: 200px;
-	float: left;	
+	width: 150px;
+	float: left;
+	text-align: center;	
 }
 
 #left p{
@@ -52,5 +57,15 @@ a {
 }
 
 #list{
-	width: 300px;
+	width: 320px;
+}
+
+.textLevel{
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.resultReport{
+	text-align: center;
 }

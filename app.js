@@ -22,5 +22,9 @@ app.config(
 		templateUrl: 'pages/list.html',
 		controller:  'ListCtrl'
 	})
+	.when('/report', {
+		templateUrl: 'pages/report.html',
+		controller:  'ReportCtrl'
+	})
 	.otherwise({redirectTo:'/'})
 });

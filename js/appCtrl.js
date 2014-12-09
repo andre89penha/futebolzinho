@@ -28,5 +28,9 @@ app.controller('AppCtrl',function($scope,$location, AppService){
 			$scope.countConvene = $scope.listPlayers.length;
 		}
 	}
+
+	$scope.redirctReport = function(){
+		$location.path('/report');
+	}
 	
 });

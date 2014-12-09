@@ -3,17 +3,22 @@
 		<h1>Futebolzinho</h1>
 	</header>
 
-	<section id="inputArea">
-		<div id="list">
+	<section class="gaia-list fit scroll sticky">
+		<article id="list">
+			<header>
+				Times sorteados
+			</header><!-- /header -->
 			<div id="left">
 				<h3>Time A</h3>
 				<p ng-repeat="playerA in listTeamA track by $index">{{playerA.name}}</p>
+				<p class="textLevel">Level {{teamALevel}}</p>
 			</div>
 			<div id="right">
 				<h3>Time B</h3>
 				<p ng-repeat="playerB in listTeamB track by $index">{{playerB.name}}</p>
+				<p class="textLevel">Level {{teamBLevel}}</p>
 			</div>
-		</div>
+		</article>
 	</section>
 	
 	<footer class="gaia-footer">

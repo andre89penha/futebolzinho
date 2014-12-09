@@ -1,8 +1,11 @@
 app.controller('ListCtrl', function($scope, $location, AppService){
+
 		if (AppService.getPlayers().length >= 4) {
 			AppService.sortPlayers();
 			$scope.listTeamA = AppService.getTeamA();
 			$scope.listTeamB = AppService.getTeamB();
+			$scope.teamALevel = AppService.getLevelTeamA();
+			$scope.teamBLevel = AppService.getLevelTeamB();
 		} else {
 			alert("É necessário ter mais de 4 jogadores para sortear os times");
 			$location.path('/');

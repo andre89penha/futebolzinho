@@ -1,0 +1,15 @@
+{
+  "version": "1",
+  "name": "Futebolzinho",
+  "launch_path": "/index.html",
+  "description": "Aplicativo para gerar times aleatorios",
+  "icons": {
+    "128": "/images/player.png"
+  },
+  "developer": {
+    "name": "André Penha",
+    "url": "http://andre89penha.github.io"
+  },
+  "installs_allowed_from": ["*"],
+  "default_locale": "pt-br"
+}
