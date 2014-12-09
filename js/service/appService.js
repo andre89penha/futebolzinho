@@ -1,6 +1,8 @@
 app.factory('AppService', function(){
 	
 	var players = [];
+	var dataReport = {qtySort: 0, maxTeamLevel: 0, minTeamLevel: 1000};
+
 	var appService = {};
 	var teamA = [];
 	var teamB = [];
@@ -10,9 +12,20 @@ app.factory('AppService', function(){
 	var persist = function(){
 		localStorage.setItem('players', JSON.stringify(players));
 	}
+	var persistReports = function(){
+		localStorage.setItem('dataReport', JSON.stringify(dataReport));	
+	}
 
 	var remove = function(index){
 
+	}
+
+	var getReports = function(){
+		var retriveReports = JSON.parse(localStorage.getItem('dataReport'));
+		if(retriveReports){
+			dataReport = retriveReports;
+		}
+		return dataReport;
 	}
 	
 	appService.addPlayer = function(player){
@@ -27,6 +40,8 @@ app.factory('AppService', function(){
 		}
 		return players
 	}
+
+
 
 	appService.removePlayer = function(player){
 		
@@ -92,6 +107,25 @@ app.factory('AppService', function(){
 			sortList.splice(sort,1);
 			len = sortList.length;
 		}
+		dataReport = getReports();
+		dataReport.qtySort++;
+		if (levelTeamA > levelTeamB) {
+			if (levelTeamA > dataReport.maxTeamLevel) {
+				dataReport.maxTeamLevel = levelTeamA; 
+			}
+			if (levelTeamB < dataReport.minTeamLevel) {
+				dataReport.minTeamLevel = levelTeamB;
+			}
+		} else {
+			if (levelTeamB > dataReport.maxTeamLevel) {
+				dataReport.maxTeamLevel = levelTeamB
+			}
+			if (levelTeamA < dataReport.minTeamLevel) {
+				dataReport.minTeamLevel = levelTeamA;
+			}
+		}
+		persistReports();
+
 	}
 	
 	appService.getTeamA = function(){
@@ -113,6 +147,20 @@ app.factory('AppService', function(){
 	appService.getReport = function(){
 		var report = {};
 		report.qtyPlayers = players.length;
+		report.qtyPlayersLine = 0;
+		report.qtyGoalkeepers = 0;
+		for (var i = 0; i < players.length; i++) {
+			if (players[i].position === 'player') {
+				report.qtyPlayersLine++;
+			}else{
+				report.qtyGoalkeepers++;
+			}
+		}
+		report.playersForTeam = report.qtyPlayers % 2 === 0 ? report.qtyPlayers/2 : Math.floor((report.qtyPlayers/2) + 1);
+		dataReport = getReports();
+		report.qtySorts = dataReport.qtySort;
+		report.maxTeamLevel = dataReport.maxTeamLevel;
+		report.minTeamLevel = dataReport.minTeamLevel;
 		return report;
 	}
 

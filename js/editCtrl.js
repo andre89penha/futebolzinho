@@ -8,15 +8,10 @@ app.controller('EditCtrl', function($scope, $routeParams, $location, AppService)
 
 	$scope.positions = ['player', 'goalkeeper'];
 	$scope.playerName = $routeParams.player;
-	console.log($routeParams.player);
 	//$scope.playersIndex = $scope.listPlayers.indexOf($scope.playerName);
 	
 	$scope.save = function(){
-		console.log($scope.playerName);
-		console.log($scope.playerPosition);
-		console.log($scope.playerLevel.value);
-
-		if (confirm('Deseja realmente alterar o jogador ' + $routeParams.player)) {
+			if (confirm('Deseja realmente alterar o jogador ' + $routeParams.player)) {
 			var player = new Object();
 			player.otherName = $routeParams.player;
 			player.name = $scope.playerName;
