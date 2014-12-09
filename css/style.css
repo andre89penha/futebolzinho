@@ -1,13 +1,3 @@
-#namePlayer{
-	font-size: 1.7rem;
-	float:left;
-	margin-top:5px;
-	margin-left: 5px;
-}
-#levelPlayer{
-	float:right;
-	margin-left: 5px;
-}
 
 #inputArea{
 	padding: 20px;
@@ -28,11 +18,39 @@ section article header {
 	text-align: center;
 }
 
-#imagePosition {
-	height: 32px;
-	width: 32px;
+#btDelete {
+	position: absolute;
+	right:20px;
 }
 
-#btDelete{
-	margin-left: 20px;
+a {
+	text-decoration: none;
+	color: black;
+}
+
+#left{
+	position:relative;
+	width: 140px;
+	height: 200px;
+	float: left;
+}
+
+#right{
+	position:relative;
+	width: 140px;
+	height: 200px;
+	float: left;	
+}
+
+#left p{
+	font-size: 15px;
+}
+
+
+#right p{
+	font-size: 15px;	
+}
+
+#list{
+	width: 300px;
 }

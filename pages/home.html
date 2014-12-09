@@ -17,11 +17,11 @@
 			<ul>
 				<li ng-repeat="player in listPlayers track by $index">
 					<aside class="pack-end">
-						<img id="imagePosition" alt="placeholder" src="images/{{player.position}}.png">
+						<img alt="image" src="images/{{player.position}}.png">
 					</aside>
 					<a href="#/edit/{{player.name}}">
-						<p id="namePlayer">{{player.name}}</p>
-						<p id="levelPlayer">Level {{player.level}} <span data-icon="signal-{{player.level}}"></span></p>
+						<p>{{player.name}}</p>
+						<p>Level {{player.level}} <span data-icon="signal-{{player.level}}"></span></p>
 					</a>
 					<span data-icon="delete" id="btDelete" ng-click="remove(player.name)"></span>
 				</li>
